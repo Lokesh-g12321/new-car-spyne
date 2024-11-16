@@ -27,6 +27,8 @@ export class SignupComponent implements OnInit {
   onSignUp(): void {
     if (this.signupForm.valid) {
       const { username, password, cpassword } = this.signupForm.value;
+      this.router.navigate(['/login']);
+
 
      
       if (password !== cpassword) {

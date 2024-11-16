@@ -1,0 +1,48 @@
+<div class="video-background">
+    <video autoplay loop playsinline>
+        <source src="assets/carsbg.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="content">
+        <h1>SPYNE.ai</h1>
+        <p>The Future of Automotive Retail.</p>
+    </div>
+    <div class="pad">
+        <div class="container">
+            <h1>LOGIN</h1>
+
+            <!-- Bind the form to the reactive form group -->
+            <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+                <div class="details">
+                    <div class="row">
+                        <div class="col">
+                            <label class="textcol" style="color: #eae1e0;" for="userName">User Name:</label>
+                        </div>
+                        <div class="col">
+                            <input id="userName" type="text" placeholder="Login Id" formControlName="userName"
+                                required />
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col">
+                            <label class="textcol" style="color: #dcd4d2;" for="password">Password:</label>
+                        </div>
+                        <div class="col">
+                            <input id="password" type="password" placeholder="Password" formControlName="password"
+                                required />
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <button type="submit" class="btn" style="background-color: #121010;" [disabled]="loginForm.invalid">
+                    Login
+                </button>
+            </form>
+
+            <a>Don't have an account yet?</a>
+            <a routerLink="/signup" style="text-decoration: none; color: inherit;">Register Now</a>
+        </div>
+        </div>
+    </div>

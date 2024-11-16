@@ -1,0 +1,54 @@
+<div class="video-background">
+    <video autoplay loop muted playsinline>
+      <source src="assets/carsbg.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  
+    <div class="content">
+      <h1>Your Title Here</h1>
+      <p>Your description here.</p>
+    </div>
+  
+    <div class="container">
+      <h1>SIGN UP</h1>
+  
+      <!-- Ensure the form element is correctly bound to the formGroup -->
+      <form [formGroup]="signupForm" (ngSubmit)="onSignUp()">
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <input id="username" formControlName="username" placeholder="Enter your username" />
+          <div *ngIf="signupForm.get('username')?.invalid && (signupForm.get('username')?.touched || signupForm.get('username')?.dirty)">
+            <small *ngIf="signupForm.get('username')?.errors?.['required']">Username is required.</small>
+            <small *ngIf="signupForm.get('username')?.errors?.['minlength']">Username must be at least 3 characters long.</small>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input id="password" type="password" formControlName="password" placeholder="Enter your password" />
+          <div *ngIf="signupForm.get('password')?.invalid && (signupForm.get('password')?.touched || signupForm.get('password')?.dirty)">
+            <small *ngIf="signupForm.get('password')?.errors?.['required']">Password is required.</small>
+            <small *ngIf="signupForm.get('password')?.errors?.['minlength']">Password must be at least 6 characters long.</small>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="cpassword">Confirm Password:</label>
+          <input id="cpassword" type="password" formControlName="cpassword" placeholder="Confirm your password" />
+          <div *ngIf="signupForm.get('cpassword')?.invalid && (signupForm.get('cpassword')?.touched || signupForm.get('cpassword')?.dirty)">
+            <small *ngIf="signupForm.get('cpassword')?.errors?.['required']">Confirm Password is required.</small>
+            <small *ngIf="signupForm.hasError('passwordMismatch')">Passwords do not match.</small>
+          </div>
+        </div>
+  
+        <button type="submit" [disabled]="signupForm.invalid">Sign Up</button>
+  
+        <div *ngIf="successMessage" class="success">{{ successMessage }}</div>
+        <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+      </form>
+  
+      <p>Already have an account?</p>
+      <a routerLink="/login" style="text-decoration: none; color: inherit;">Login</a>
+    </div>
+  </div>
+  

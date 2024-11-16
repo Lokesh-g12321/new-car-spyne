@@ -1,0 +1,142 @@
+.product-container{
+    /* background-color: bisque; */
+    display: flex;
+    
+    flex-direction: column;
+    width: 500px;
+    height: 400px;
+    align-items: center;
+   
+    background: rgba(67, 60, 60, 0.5);
+    
+}
+.pad{
+    padding-top: 60px;
+}
+.pad2{
+    padding-left: 200px;
+    align-items: center;
+}
+form {
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+  
+  form div {
+    margin-bottom: 10px;
+  }
+  
+  form label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  form input, form select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .product-container {
+    border: 1px solid #ccc;
+    padding: 16px;
+    margin: 8px;
+    text-align: center;
+  }
+  
+  .product-container img {
+    max-width: 100%;
+    height: auto;
+  }
+  .container {
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding: 10px;
+  }
+  button {
+    margin-right: 5px;
+  }
+  form {
+    margin-top: 20px;
+  }
+  form div {
+    margin-bottom: 10px;
+  }
+  .card {
+    border: 1px solid #ddd;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-img-top {
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .mb-4 {
+    margin-bottom: 1.5rem;
+  }
+  .product-card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+    background: #f9f9f9;
+  }
+  
+  .product-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  .product-details {
+    margin-top: 10px;
+  }
+  
+  .product-actions button {
+    margin: 5px;
+  }
+  .product-card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    text-align: center;
+    background: #f9f9f9;
+  }
+  
+  .product-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  .product-details {
+    margin-top: 10px;
+  }
+  
+  .product-actions button {
+    margin: 5px;
+  }
+  
+  .content{
+    position: relative;
+    z-index: 1; 
+    color: rgb(35, 20, 20);
+    text-align: center;
+    z-index: 1; 
+    color: rgb(38, 27, 27); 
+    text-align: center; 
+    background-color:peru;
+    border-radius: 10px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+
+  }
+  
+  

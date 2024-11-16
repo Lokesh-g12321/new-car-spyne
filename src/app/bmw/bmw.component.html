@@ -1,0 +1,17 @@
+<div class="bmw-page">
+    <h1>BMW Cars</h1>
+    
+    <div *ngFor="let car of bmwCars" class="car-details">
+      <h2>{{ car.title }}</h2>
+      <p>{{ car.description }}</p>
+      <p><strong>Tags:</strong> {{ car.tags.join(', ') }}</p>
+      
+      <div class="car-images">
+        <h4>Images:</h4>
+        <div *ngFor="let img of car.images" class="image-preview">
+          <img [src]="img" alt="{{ car.title }}" class="preview-img"/>
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,53 @@
+<div class="content">
+    <h1>SPYNE.Ai</h1>
+    <p>The Future of Automotive Retail.</p>
+</div>
+<div class="container">
+    <div class="row" *ngFor="let row of splitProducts(products, 3)">
+      <div class="col-md-4" *ngFor="let product of row">
+        <div class="product-card mb-4">
+          <div class="product-image">
+            <img [src]="product.image" alt="{{ product.name }}" class="img-fluid">
+          </div>
+          <div class="product-details mt-2">
+            <h4>{{ product.name }}</h4>
+            <p><b>Price:</b> {{ product.price }}</p>
+            <p [style.color]="product.avail === 'Available' ? 'green' : 'red'">
+              <b>{{ product.avail }}</b>
+            </p>
+          </div>
+          <div class="product-actions mt-2">
+            <button class="btn btn-danger" (click)="removeProduct(products.indexOf(product))">Remove</button>
+            <button class="btn btn-primary" (click)="editProduct(product, products.indexOf(product))">Edit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <hr>
+  
+ 
+  <form (ngSubmit)="addOrUpdateProduct()">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" id="name" class="form-control" [(ngModel)]="newProduct.name" name="name" required>
+    </div>
+    <div class="form-group">
+      <label for="price">Price:</label>
+      <input type="text" id="price" class="form-control" [(ngModel)]="newProduct.price" name="price" required>
+    </div>
+    <div class="form-group">
+      <label for="avail">Availability:</label>
+      <select id="avail" class="form-control" [(ngModel)]="newProduct.avail" name="avail">
+        <option value="Available">Available</option>
+        <option value="Not Available">Not Available</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="image">Image URL:</label>
+      <input type="text" id="image" class="form-control" [(ngModel)]="newProduct.image" name="image" required>
+    </div>
+    <button type="submit" class="btn btn-success">{{ editMode ? 'Update' : 'Add' }} Product</button>
+  </form>
+  
